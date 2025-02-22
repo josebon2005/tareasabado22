@@ -5,6 +5,7 @@ void determinarSigno();
 void verificarParidad();
 void mayorDeTres();
 void anioBisiesto();
+void vocalOConsonante();
 
 int main() {
     int opcion;
@@ -40,7 +41,9 @@ int main() {
             case 4:
                 anioBisiesto();
                 break;
-            case 5: break;
+            case 5:
+                vocalOConsonante();
+                break;
             case 6: break;
             case 7: break;
             case 8: break;
@@ -91,4 +94,18 @@ void anioBisiesto() {
         cout << "El año es bisiesto.\n";
     else
         cout << "El año no es bisiesto.\n";
+}
+
+void vocalOConsonante() {
+    char letra;
+    cout << "\nIngrese una letra: ";
+    cin >> letra;
+    letra = tolower(letra); // Convertir a minúscula para evitar problemas
+
+    if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u')
+        cout << "Es una vocal.\n";
+    else if ((letra >= 'a' && letra <= 'z'))
+        cout << "Es una consonante.\n";
+    else
+        cout << "No es una letra válida.\n";
 }
