@@ -8,6 +8,7 @@ void anioBisiesto();
 void vocalOConsonante();
 void esPrimo();
 void anioNacimientoValido();
+void multiplo5y7();  // Nueva declaración
 
 int main() {
     int opcion;
@@ -52,7 +53,9 @@ int main() {
             case 7:
                 anioNacimientoValido();
                 break;
-            case 8: break;
+            case 8:
+                multiplo5y7();  // Llamada a la función
+                break;
             case 9: break;
             case 10: break;
             case 0: cout << "Saliendo del programa...\n"; break;
@@ -152,3 +155,15 @@ void anioNacimientoValido() {
     else
         cout << "Año de nacimiento inválido.\n";
 }
+
+void multiplo5y7() {
+    int num;
+    cout << "\nIngrese un numero: ";
+    cin >> num;
+
+    if (num % 5 == 0 && num % 7 == 0)
+        cout << "El numero es multiplo de 5 y 7.\n";
+    else
+        cout << "El numero no es multiplo de 5 y 7.\n";
+}
+
