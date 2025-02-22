@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 
+void determinarSigno();
 void verificarParidad();
 void mayorDeTres();
-void anioBisiesto();  // Declaramos la nueva función
+void anioBisiesto();
 
 int main() {
     int opcion;
@@ -25,12 +26,20 @@ int main() {
         cout << "Seleccione una opcion: ";
         cin >> opcion;
 
-        // Ejecutar la opción correspondiente
+        // El switch con las opciones
         switch (opcion) {
-            case 1: verificarParidad(); break;  // Llamamos a la función para verificar paridad
-            case 2: mayorDeTres(); break;  // Llamamos a la función para encontrar el mayor de tres números
-            case 3: anioBisiesto(); break;  // Llamamos a la función para verificar si el año es bisiesto
-            case 4: break;
+            case 1:
+                determinarSigno();
+                break;
+            case 2:
+                verificarParidad();
+                break;
+            case 3:
+                mayorDeTres();
+                break;
+            case 4:
+                anioBisiesto();
+                break;
             case 5: break;
             case 6: break;
             case 7: break;
@@ -43,6 +52,15 @@ int main() {
     } while (opcion != 0);
 
     return 0;
+}
+
+void determinarSigno() {
+    int num;
+    cout << "\nIngrese un numero: ";
+    cin >> num;
+    if (num > 0) cout << "El numero es positivo.\n";
+    else if (num < 0) cout << "El numero es negativo.\n";
+    else cout << "El numero es cero.\n";
 }
 
 void verificarParidad() {
