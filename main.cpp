@@ -8,7 +8,8 @@ void anioBisiesto();
 void vocalOConsonante();
 void esPrimo();
 void anioNacimientoValido();
-void multiplo5y7();  // Nueva declaración
+void multiplo5y7();
+void calificacion();  // Declaramos la nueva función para calificación
 
 int main() {
     int opcion;
@@ -54,9 +55,11 @@ int main() {
                 anioNacimientoValido();
                 break;
             case 8:
-                multiplo5y7();  // Llamada a la función
+                multiplo5y7();
                 break;
-            case 9: break;
+            case 9:
+                calificacion();  // Llamamos a la función para calcular calificación
+                break;
             case 10: break;
             case 0: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida, intente de nuevo.\n";
@@ -167,3 +170,19 @@ void multiplo5y7() {
         cout << "El numero no es multiplo de 5 y 7.\n";
 }
 
+void calificacion() {
+    int nota;
+    cout << "\nIngrese la calificación (0-100): ";
+    cin >> nota;
+
+    if (nota >= 90)
+        cout << "Calificación: A\n";
+    else if (nota >= 80)
+        cout << "Calificación: B\n";
+    else if (nota >= 70)
+        cout << "Calificación: C\n";
+    else if (nota >= 60)
+        cout << "Calificación: D\n";
+    else
+        cout << "Calificación: F\n";
+}
