@@ -6,6 +6,7 @@ void verificarParidad();
 void mayorDeTres();
 void anioBisiesto();
 void vocalOConsonante();
+void esPrimo();
 
 int main() {
     int opcion;
@@ -44,7 +45,9 @@ int main() {
             case 5:
                 vocalOConsonante();
                 break;
-            case 6: break;
+            case 6:
+                esPrimo();
+                break;
             case 7: break;
             case 8: break;
             case 9: break;
@@ -108,4 +111,28 @@ void vocalOConsonante() {
         cout << "Es una consonante.\n";
     else
         cout << "No es una letra válida.\n";
+}
+
+void esPrimo() {
+    int num, i;
+    bool primo = true;
+
+    cout << "\nIngrese un numero: ";
+    cin >> num;
+
+    if (num <= 1) {
+        primo = false;
+    } else {
+        for (i = 2; i * i <= num; i++) {
+            if (num % i == 0) {
+                primo = false;
+                break;
+            }
+        }
+    }
+
+    if (primo)
+        cout << "El numero es primo.\n";
+    else
+        cout << "El numero no es primo.\n";
 }
