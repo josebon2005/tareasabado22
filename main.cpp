@@ -7,6 +7,7 @@ void mayorDeTres();
 void anioBisiesto();
 void vocalOConsonante();
 void esPrimo();
+void anioNacimientoValido();
 
 int main() {
     int opcion;
@@ -48,7 +49,9 @@ int main() {
             case 6:
                 esPrimo();
                 break;
-            case 7: break;
+            case 7:
+                anioNacimientoValido();
+                break;
             case 8: break;
             case 9: break;
             case 10: break;
@@ -135,4 +138,17 @@ void esPrimo() {
         cout << "El numero es primo.\n";
     else
         cout << "El numero no es primo.\n";
+}
+
+void anioNacimientoValido() {
+    int anio;
+    int anioActual = 2024;
+
+    cout << "\nIngrese su año de nacimiento: ";
+    cin >> anio;
+
+    if (anio > 1900 && anio < anioActual)
+        cout << "Año de nacimiento válido.\n";
+    else
+        cout << "Año de nacimiento inválido.\n";
 }
