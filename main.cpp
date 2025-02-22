@@ -9,7 +9,8 @@ void vocalOConsonante();
 void esPrimo();
 void anioNacimientoValido();
 void multiplo5y7();
-void calificacion();  // Declaramos la nueva función para calificación
+void calificacion();
+void calcularDescuento();  // Declaramos la nueva función
 
 int main() {
     int opcion;
@@ -58,11 +59,16 @@ int main() {
                 multiplo5y7();
                 break;
             case 9:
-                calificacion();  // Llamamos a la función para calcular calificación
+                calificacion();
                 break;
-            case 10: break;
-            case 0: cout << "Saliendo del programa...\n"; break;
-            default: cout << "Opcion invalida, intente de nuevo.\n";
+            case 10:
+                calcularDescuento();  // Llamamos a la función para calcular descuento
+                break;
+            case 0:
+                cout << "Saliendo del programa...\n";
+                break;
+            default:
+                cout << "Opcion invalida, intente de nuevo.\n";
         }
     } while (opcion != 0);
 
@@ -185,4 +191,18 @@ void calificacion() {
         cout << "Calificación: D\n";
     else
         cout << "Calificación: F\n";
+}
+
+void calcularDescuento() {
+    float precio, porcentaje;
+
+    cout << "\nIngrese el precio del articulo: ";
+    cin >> precio;
+    cout << "Ingrese el porcentaje de descuento: ";
+    cin >> porcentaje;
+
+    float descuento = precio * (porcentaje / 100);
+    float precioFinal = precio - descuento;
+
+    cout << "El precio con descuento es: " << precioFinal << endl;
 }
