@@ -2,7 +2,8 @@
 using namespace std;
 
 void verificarParidad();
-void mayorDeTres();  // Declaramos la nueva función
+void mayorDeTres();
+void anioBisiesto();  // Declaramos la nueva función
 
 int main() {
     int opcion;
@@ -28,7 +29,7 @@ int main() {
         switch (opcion) {
             case 1: verificarParidad(); break;  // Llamamos a la función para verificar paridad
             case 2: mayorDeTres(); break;  // Llamamos a la función para encontrar el mayor de tres números
-            case 3: break;
+            case 3: anioBisiesto(); break;  // Llamamos a la función para verificar si el año es bisiesto
             case 4: break;
             case 5: break;
             case 6: break;
@@ -62,4 +63,14 @@ void mayorDeTres() {
         cout << "El mayor es: " << b << endl;
     else
         cout << "El mayor es: " << c << endl;
+}
+
+void anioBisiesto() {
+    int anio;
+    cout << "\nIngrese un año: ";
+    cin >> anio;
+    if ((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0))
+        cout << "El año es bisiesto.\n";
+    else
+        cout << "El año no es bisiesto.\n";
 }
